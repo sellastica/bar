@@ -1,0 +1,49 @@
+<style>
+	#admin-bar {
+		position: fixed;
+		bottom: 0;
+		left: 40%;
+		font: 13px/20px Tahoma, sans-serif;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		background-color: #dbe2e4;
+		border: solid 1px #c5cacc;
+		border-bottom: none;
+	}
+
+	#admin-bar, #admin-bar a {
+		color: #333;
+	}
+
+	#admin-bar ul, #admin-bar ul li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	#admin-bar ul li {
+		float: left;
+	}
+
+	#admin-bar ul li a {
+		display: block;
+		padding: 5px 20px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	#admin-bar ul li a:hover {
+		background-color: #d2d7d8;
+		color: #000;
+	}
+</style>
+
+<div id="admin-bar">
+	<ul>
+		{foreach $links as $link}
+			<li>
+				<a href="{$link[1]}">{$link[0]}</a>
+			</li>
+		{/foreach}
+	</ul>
+</div>
