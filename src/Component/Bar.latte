@@ -1,8 +1,10 @@
 <style>
-	#admin-bar {
+	.bottom-bar {
 		position: fixed;
 		bottom: 0;
-		left: 40%;
+		left: 50%;
+		transform: translateX(-50%);
+		display: inline-block;
 		font: 13px/20px Tahoma, sans-serif;
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
@@ -11,39 +13,38 @@
 		border-bottom: none;
 	}
 
-	#admin-bar, #admin-bar a {
+	.bottom-bar, .bottom-bar a {
 		color: #333;
 	}
 
-	#admin-bar ul, #admin-bar ul li {
+	.bottom-bar, .bottom-bar li {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 
-	#admin-bar ul li {
+	.bottom-bar li {
 		float: left;
 	}
 
-	#admin-bar ul li a {
+	.bottom-bar li a {
 		display: block;
 		padding: 5px 20px;
 		text-decoration: none;
 		text-align: center;
 	}
 
-	#admin-bar ul li a:hover {
+	.bottom-bar li a:hover {
 		background-color: #d2d7d8;
 		color: #000;
 	}
 </style>
 
-<div id="admin-bar">
-	<ul>
-		{foreach $links as $link}
-			<li>
-				<a href="{$link[1]}">{$link[0]}</a>
-			</li>
-		{/foreach}
-	</ul>
-</div>
+
+<ul class="bottom-bar">
+	{foreach $links as $link}
+		<li>
+			<a href="{$link[1]}">{$link[0]}</a>
+		</li>
+	{/foreach}
+</ul>
