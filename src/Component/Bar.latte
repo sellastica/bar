@@ -11,6 +11,7 @@
 		background-color: #dbe2e4;
 		border: solid 1px #c5cacc;
 		border-bottom: none;
+		z-index: 99999;
 	}
 
 	.bottom-bar, .bottom-bar a {
@@ -38,13 +39,19 @@
 		background-color: #d2d7d8;
 		color: #000;
 	}
+
+	@media (max-width: 1024px) {
+		.bottom-bar {
+			display: none;
+		}
+	}
 </style>
 
 
 <ul class="bottom-bar">
 	{foreach $links as $link}
 		<li>
-			<a href="{$link[1]}">{$link[0]}</a>
+			<a href="{$link[1]}"{if !empty($link[2])} target="_blank"{/if}>{$link[0]}</a>
 		</li>
 	{/foreach}
 </ul>
