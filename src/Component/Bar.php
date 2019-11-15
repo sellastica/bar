@@ -9,12 +9,12 @@ class Bar extends \Sellastica\AdminUI\Component\BaseControl
 
 	/**
 	 * @param string $title
-	 * @param string $url
+	 * @param string|null $url
 	 * @param bool $openInNewWindow
 	 */
 	public function addLink(
 		string $title,
-		string $url,
+		string $url = null,
 		bool $openInNewWindow = false
 	)
 	{

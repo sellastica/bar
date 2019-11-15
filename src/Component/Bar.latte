@@ -2,8 +2,8 @@
 	.bottom-bar {
 		position: fixed;
 		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
+		left: 40%;
+		transform: translateX(-35%);
 		display: inline-block;
 		font: 13px/20px Tahoma, sans-serif;
 		border-top-left-radius: 3px;
@@ -28,7 +28,7 @@
 		float: left;
 	}
 
-	.bottom-bar li a {
+	.bottom-bar li a, .bottom-bar li span {
 		display: block;
 		padding: 5px 20px;
 		text-decoration: none;
@@ -51,7 +51,11 @@
 <ul class="bottom-bar">
 	{foreach $links as $link}
 		<li>
-			<a href="{$link[1]}"{if !empty($link[2])} target="_blank"{/if}>{$link[0]}</a>
+			{if !empty($link[1])}
+				<a href="{$link[1]}"{if !empty($link[2])} target="_blank"{/if}>{$link[0]}</a>
+			{else}
+                <span>{$link[0]}</span>
+			{/if}
 		</li>
 	{/foreach}
 </ul>
